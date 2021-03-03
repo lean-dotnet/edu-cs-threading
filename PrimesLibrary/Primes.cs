@@ -21,5 +21,15 @@ namespace PrimesLibrary
 
             return true;
         }
+
+        public static long CountPrimeNumbers(long fromInclusive, long toExclusive)
+        {
+            long count = 0;
+            for (long z = fromInclusive; z < toExclusive; z++)
+            {
+                if (IsPrimeNumber(z)) ++count;
+            }
+            return count;
+        }
     }
 }

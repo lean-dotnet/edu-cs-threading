@@ -50,5 +50,18 @@ namespace PrimesLibrary.Tests
             int primesCount = numbers.Select(z => Primes.IsPrimeNumber(z)).Where(isPrime => isPrime).Count();
             Assert.AreEqual(numbers.Length - 3, primesCount);
         }
+
+        [TestMethod()]
+        public void CountPrimeNumbersTest()
+        {
+            // See https://en.wikipedia.org/wiki/Prime_number_theorem
+            // or https://www.michael-holzapfel.de/themen/primzahlen/pz-anzahl.htm
+
+            Assert.AreEqual(4, Primes.CountPrimeNumbers(1, 10));
+            Assert.AreEqual(25, Primes.CountPrimeNumbers(1, 100));
+            Assert.AreEqual(168, Primes.CountPrimeNumbers(1, 1000));
+            Assert.AreEqual(1229, Primes.CountPrimeNumbers(1, 10000));
+            Assert.AreEqual(9592, Primes.CountPrimeNumbers(1, 100000));
+        }
     }
 }
