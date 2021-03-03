@@ -14,21 +14,21 @@ namespace PrimesLibrary.Tests
         public void IsOneAPrimeNumberTest()
         {
             bool isOneAPrimeNumber = Primes.IsPrimeNumber(1);
-            Assert.AreEqual(isOneAPrimeNumber, false);
+            Assert.AreEqual(false, isOneAPrimeNumber);
         }
 
         [TestMethod()]
         public void IsTwoAPrimeNumberTest()
         {
             bool isTwoAPrimeNumber = Primes.IsPrimeNumber(2);
-            Assert.AreEqual(isTwoAPrimeNumber, true);
+            Assert.AreEqual(true, isTwoAPrimeNumber);
         }
 
         [TestMethod()]
         public void IsThreeAPrimeNumberTest()
         {
             bool isThreePrimeNumber = Primes.IsPrimeNumber(3);
-            Assert.AreEqual(isThreePrimeNumber, true);
+            Assert.AreEqual(true, isThreePrimeNumber);
         }
 
         [TestMethod()]
@@ -38,7 +38,7 @@ namespace PrimesLibrary.Tests
             ulong evenNumber = (ulong)(rnd.Next() + 1) * 2;
 
             bool isEvenNumberPrimeNumber = Primes.IsPrimeNumber(evenNumber);
-            Assert.AreEqual(isEvenNumberPrimeNumber, false);
+            Assert.AreEqual(false, isEvenNumberPrimeNumber);
         }
 
         [TestMethod()]
@@ -48,7 +48,7 @@ namespace PrimesLibrary.Tests
             ulong[] numbers = new ulong[] { 5, 7, 11, 13, 19, 23, 25, 29, 39, 71, 77, 173 };
 
             int primesCount = numbers.Select(z => Primes.IsPrimeNumber(z)).Where(isPrime => isPrime).Count();
-            Assert.AreEqual(primesCount, numbers.Length - 3);
+            Assert.AreEqual(numbers.Length - 3, primesCount);
         }
     }
 }
