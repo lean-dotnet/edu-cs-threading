@@ -63,5 +63,17 @@ namespace PrimesLibrary.Tests
             Assert.AreEqual(1229, Primes.CountPrimeNumbers(1, 10000));
             Assert.AreEqual(9592, Primes.CountPrimeNumbers(1, 100000));
         }
+
+        [TestMethod()]
+        public void ProgressReportingTest()
+        {
+            int callCount = 0;
+            Primes.Progress += (percent) => ++callCount;
+
+            Primes.CountPrimeNumbers(1, 27389);
+
+            // Calls for percent 10%, 20%, ... 100%
+            Assert.AreEqual(9, callCount);
+        }
     }
 }
