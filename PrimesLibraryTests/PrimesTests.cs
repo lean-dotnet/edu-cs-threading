@@ -16,6 +16,11 @@ namespace PrimesLibrary.Tests
             Assert.AreEqual(isOneAPrimeNumber, false);
         }
 
-      
+        [TestMethod()]
+        public void IsTwoAPrimeNumberTest()
+        {
+            bool isTwoAPrimeNumber = Primes.IsPrimeNumber(2);
+            Assert.AreEqual(isTwoAPrimeNumber, true);
+        }
     }
 }
