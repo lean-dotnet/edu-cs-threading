@@ -22,5 +22,12 @@ namespace PrimesLibrary.Tests
             bool isTwoAPrimeNumber = Primes.IsPrimeNumber(2);
             Assert.AreEqual(isTwoAPrimeNumber, true);
         }
+
+        [TestMethod()]
+        public void IsThreeAPrimeNumberTest()
+        {
+            bool isThreePrimeNumber = Primes.IsPrimeNumber(3);
+            Assert.AreEqual(isThreePrimeNumber, true);
+        }
     }
 }

@@ -10,7 +10,7 @@ namespace PrimesLibrary
             if (z < 2) return false;
             if (z == 2) return true;
 
-            return false;
+            return true;
         }
     }
 }
