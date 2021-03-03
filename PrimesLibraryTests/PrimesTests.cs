@@ -29,5 +29,15 @@ namespace PrimesLibrary.Tests
             bool isThreePrimeNumber = Primes.IsPrimeNumber(3);
             Assert.AreEqual(isThreePrimeNumber, true);
         }
+
+        [TestMethod()]
+        public void IsEvenNumberAPrimeNumberTest()
+        {
+            Random rnd = new System.Random();
+            ulong evenNumber = (ulong) (rnd.Next() + 1) * 2;
+
+            bool isEvenNumberPrimeNumber = Primes.IsPrimeNumber(evenNumber);
+            Assert.AreEqual(isEvenNumberPrimeNumber, false);
+        }
     }
 }
