@@ -35,7 +35,7 @@ namespace PrimesLibrary.Tests
         public void IsEvenNumberAPrimeNumberTest()
         {
             Random rnd = new System.Random();
-            ulong evenNumber = (ulong)(rnd.Next() + 1) * 2;
+            long evenNumber = (long)(rnd.Next() + 1) * 2;
 
             bool isEvenNumberPrimeNumber = Primes.IsPrimeNumber(evenNumber);
             Assert.AreEqual(false, isEvenNumberPrimeNumber);
@@ -45,7 +45,7 @@ namespace PrimesLibrary.Tests
         public void WellKnownPrimeNumbersTest()
         {
             // Three non-primes: 25, 39 and 77
-            ulong[] numbers = new ulong[] { 5, 7, 11, 13, 19, 23, 25, 29, 39, 71, 77, 173 };
+            long[] numbers = new long[] { 5, 7, 11, 13, 19, 23, 25, 29, 39, 71, 77, 173 };
 
             int primesCount = numbers.Select(z => Primes.IsPrimeNumber(z)).Where(isPrime => isPrime).Count();
             Assert.AreEqual(numbers.Length - 3, primesCount);
