@@ -70,10 +70,11 @@ namespace PrimesLibrary.Tests
             int callCount = 0;
             Primes.Progress += (percent) => ++callCount;
 
+            Primes.CountPrimeNumbers(1, 10);
             Primes.CountPrimeNumbers(1, 27389);
 
             // Calls for percent 10%, 20%, ... 100%
-            Assert.AreEqual(9, callCount);
+            Assert.AreEqual(2 * 9, callCount);
         }
     }
 }
